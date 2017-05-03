@@ -1,32 +1,46 @@
-<?php	
-	/*Accedo al DB*/
-	$con = mysqli_connect("localhost","root","andrea","hyt");
+<?php
 
-	if (mysqli_connect_errno($con)) {
-		echo "Failed to connect to MySQL: " . mysqli_connect_error($conn);
-	}
-	//CONTROLLO SE UTENTE ESISTE GIA'
-	trim($_POST['email']);
-	$email = $_POST['email'];
-	$query = "SELECT * FROM users WHERE email = '$email' ";
-	$res = mysqli_query($con,$query);
-	if(mysqli_num_rows($res) == 1){
-		mysqli_close($con);
-		echo "Già Registrato";
-		//header('Location: ../login_page.php');
-		exit;
-	}
-	else{
-		trim($_POST['name']);
-		trim($_POST['password']);
-		$name = $_POST['name'];
-		$pwd = password_hash($_POST['password'],PASSWORD_DEFAULT);
-		$query = "INSERT INTO Users VALUES ('$name','$email','$pwd')";
-		$res = mysqli_query($con,$query);
-		if($res == false) echo "failed";
-		mysqli_close($con);
-		echo "Register Riuscita";
-		//header('Location: ../index.html');
-		exit;
-	}
-?>
+$errormessage = "";
+
+if (isset($_POST['register_button'])) {
+
+    require_once("database.php");
+
+    if (isset($_POST['email']) && isset($_POST['password'])
+        && isset($_POST['2nd_password']) && isset($_POST['name'])
+        && !empty($_POST['email']) && !empty($_POST['password'])
+        && !empty($_POST['2nd_password']) && !empty($_POST['name'])
+    ) {
+
+        if ($_POST['password'] != $_POST['2nd_password'])
+            $errormessage = "Le due password non corrispondono! ";
+        else {
+
+            // Accedo al DB
+            $con = db_connection();
+
+            // Controllo se utente esiste già
+            trim($_POST['email']);
+            $email = $_POST['email'];
+            $query = "SELECT * FROM Users WHERE email = '$email' ";
+            $res = mysqli_query($con, $query);
+            if (mysqli_num_rows($res) === 1) {
+                mysqli_close($con);
+                $errormessage .= 'Utente gi&agrave; registrato!';
+            } else {
+                trim($_POST['name']);
+                trim($_POST['password']);
+                $name = $_POST['name'];
+                $pwd = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                $query = "INSERT INTO users VALUES ('$name','$email','$pwd')";
+                $res = mysqli_query($con, $query);
+                if ($res == false) //echo mysqli_error($con) . "<br>";
+                    $errormessage .= mysqli_error($con);
+                mysqli_close($con);
+            }
+        }
+    }
+
+    else
+        $errormessage .= "Si devono compilare tutti i campi! ";
+}
