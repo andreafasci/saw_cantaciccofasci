@@ -60,6 +60,7 @@ if (isset($_POST['login_button'])) {
             $row = mysqli_fetch_array($result);
             if (password_verify($pwd, $row['password'])) {
                 $_SESSION['myarea'] = $email;
+                $_SESSION['logged'] = true;
                 //Se è stato selezionato il checkbox..
                 if (isset($_POST['checkbox'])) {
                     $_SESSION['remember_me'] = true;

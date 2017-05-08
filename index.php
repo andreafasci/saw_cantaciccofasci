@@ -72,7 +72,7 @@
 
     <?php
         include_once('navbar.php');
-        ?>
+    ?>
 
     <!-- Intro Section -->
     
@@ -118,7 +118,7 @@
                 <div class="col-lg-12">
                     <h3><strong>Log in to your personal area to report</strong></h3><BR>
                     <div id="map" style="width: 50vw; height: 40vh;left:20%"></div><BR>
-                    <a href="my_area.php" class="btn btn-default btn-lg">Go to personal area</a>
+                    <a href="redirect.php" class="btn btn-default btn-lg">Go to personal area</a>
                 </div>
             </div>
         </div>

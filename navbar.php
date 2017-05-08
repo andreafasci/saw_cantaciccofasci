@@ -37,13 +37,35 @@
                    <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll" id = "ul1">Login</a>
+                    <?php
+                    if(isset($_SESSION['logged'])){
+                        if($_SESSION['logged']){
+                            echo '
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a>Logged as</a>
+                                </li>
+                                <li>
+                                    <a href="php/logout.php">Logout</a>
+                                </li>
+                    
+                            </ul>';
+                        }}
+                        else{
+                            echo '
+                            <li>
+                                <a class="page-scroll" id = "ul1">Login</a>
 
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="register_page.php">Register</a>
-                    </li>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="register_page.php">Register</a>
+                            </li>
+                            ';
+
+                        }
+                        
+                    ?>
+                    
                 </ul>
 
             </div>
