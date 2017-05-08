@@ -44,21 +44,22 @@ if (isset($_POST['login_button'])) {
             exit;
         }
 
-
         $email = trim($_POST['email']);
         $pwd = trim($_POST['password']);
 
-        // Controllo se utente esiste
-        $query = "SELECT * FROM users WHERE email='$email'";
-        $result = mysqli_query($connection, $query);
+        // Prepared statement technique
+        if ($statement = mysqli_prepare($connection, "SELECT * FROM users WHERE email=?")) {
+            // bind parameters
+            mysqli_stmt_bind_param($statement, "s", $email);
+            // execute query
+            mysqli_stmt_execute($statement);
+            // bind result vars
+            mysqli_stmt_bind_result($statement, $res_name, $res_email, $res_password);
+            // fetch result
+            mysqli_stmt_fetch($statement);
 
-        if (mysqli_num_rows($result) == 0){
-            $errormessage .= "Utente Inesistente";
-            mysqli_close($connection);
-        }
-        else {
-            $row = mysqli_fetch_array($result);
-            if (password_verify($pwd, $row['password'])) {
+            // DO THINGS WITH RESULT
+            if (password_verify($pwd, $res_password)) {
                 $_SESSION['myarea'] = $email;
                 $_SESSION['logged'] = true;
                 //Se è stato selezionato il checkbox..
@@ -66,13 +67,15 @@ if (isset($_POST['login_button'])) {
                     $_SESSION['remember_me'] = true;
                 }
                 header('Location: redirect.php');
-                mysqli_close($connection);
+
             }
             else {
-                $errormessage .= "Password errata";
-                mysqli_close($connection);
+                $errormessage .= "Credenziali errate!";
             }
+            mysqli_stmt_close($statement);
         }
+        mysqli_close($connection);
+
     }
     else
         $errormessage .= "Si devono compilare tutti i campi! ";

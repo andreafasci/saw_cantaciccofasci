@@ -146,7 +146,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h4><strong>Contact us</strong></h4>
                 <p4>Feel free to email us to provide some feedback on our services,<BR> give us suggestions to improve our site, or to just say hello!</p4>
-                <p4><a href="mailto:feedback@startbootstrap.com">miamail@a.a</a></p><BR>
+                <p4><a href="mailto:feedback@startbootstrap.com">miamail@a.a</a></p4><BR>
                 <ul class="list-inline banner-social-buttons">
                     <li>
                             <div class="icon-circle">
