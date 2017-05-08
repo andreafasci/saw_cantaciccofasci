@@ -1,0 +1,18 @@
+body{
+	background-color: #242331;
+}
+
+h6{
+    color : #DDCA7D;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 250%;
+}
+p6{
+   color : #DDCA7D;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 160%;
+}
+.navbar-default{
+    padding: 0;
+}
+

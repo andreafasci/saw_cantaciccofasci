@@ -1,0 +1,225 @@
+h1{
+    color :white;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 550%;
+}
+p1{
+    color :white;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 160%;
+}
+
+h2{
+    color :#242331;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 250%;
+}
+p2{
+    color :#242331;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 160%;
+}
+
+h3{
+    color :white;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 250%;
+}
+
+h4{
+    color :#242331;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 250%;
+}
+p4{
+   color :#242331;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 160%;
+}
+
+p5{/* footer */
+    color :#A27035;
+}
+h6{
+    color :#242331;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 250%;
+}
+
+
+footer{
+    background-color: #242331;
+}
+
+#top-image {
+    height: 100%;
+    padding-top: 10%;
+    background:url("21.jpg")  -25px -50px;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+/* navbar */
+.navbar-default{
+	background-color: #242331;
+	border-color: #A27035;
+
+}
+.navbar-default .navbar-nav>li>a {
+    color: #B88B4A;
+}
+
+/* section */
+.intro-section{
+	
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+.about-section {
+    background: #DDCA7D;
+}
+
+.services-section {
+    background: #533E2D;
+}
+
+.contact-section {
+    background: #7D98A1;
+}
+
+
+/* contact us fb twitter google*/
+.icon-circle .fa{
+    font-size           : 25px;
+    color               : #e84700;
+    margin              : 0 auto;
+    height              : 80px;
+    width               : 80px;
+    border-radius       : 50%;
+    border              :2px solid #e84700;
+    line-height         : 80px;
+    cursor              : pointer;
+    -webkit-transition  : all  ease-in-out 0.35s;
+    -moz-transition     : all  ease-in-out 0.35s;
+    -o-transition       : all  ease-in-out 0.35s;
+    -ms-transition      : all  ease-in-out 0.35s;
+    transition          : all  ease-in-out 0.20s,background-color ease-in-out 0.05s;
+}
+
+.icon-circle  .fa:hover{
+    
+    background-color        : #e84700;    
+    color                   : #fff;
+    border                  : 1px solid #e84711;
+    -moz-box-shadow         : inset 0px 0px 0px 5px #ffffff;
+    -o-box-shadow           : inset 0px 0px 0px 5px #ffffff;
+    -ms-box-shadow          : inset 0px 0px 0px 5px #ffffff;
+    -webkit-box-shadow      : inset 0px 0px 0px 5px #ffffff;
+    box-shadow              : inset 0px 0px 0px 5px #ffffff;
+    -ms-transform           : scale(1.2,1.2); 
+    -webkit-transform       : scale(1.2,1.2);
+    -moz-transform          : scale(1.2,1.2); 
+    -o-transform            : scale(1.2,1.2); 
+    transform               : scale(1.2,1.2);  
+}
+
+.icon-circle  i:before{
+    margin-left         : 0px;
+    font-size           : 40px;
+}
+
+@media (min-width:320px) and (max-width:768px) {
+
+
+ .icon-circle .fa{
+    font-size           : 15px;
+    color               : #e84700;
+    margin              : 0 auto;
+    height              : 40px;
+    width               : 40px;
+    border-radius       : 50%;
+    border              :2px solid #e84700;
+    line-height         : 40px;
+    cursor              : pointer;
+    -webkit-transition  : all  ease-in-out 0.35s;
+    -moz-transition     : all  ease-in-out 0.35s;
+    -o-transition       : all  ease-in-out 0.35s;
+    -ms-transition      : all  ease-in-out 0.35s;
+    transition          : all  ease-in-out 0.20s,background-color ease-in-out 0.05s;
+}
+
+.icon-circle  .fa:hover{
+    
+    background-color        : #e84700;    
+    color                   : #fff;
+    border                  : 1px solid #e84711;
+    -moz-box-shadow         : inset 0px 0px 0px 5px #ffffff;
+    -o-box-shadow           : inset 0px 0px 0px 5px #ffffff;
+    -ms-box-shadow          : inset 0px 0px 0px 5px #ffffff;
+    -webkit-box-shadow      : inset 0px 0px 0px 5px #ffffff;
+    box-shadow              : inset 0px 0px 0px 5px #ffffff;
+    -ms-transform           : scale(1.2,1.2); 
+    -webkit-transform       : scale(1.2,1.2);
+    -moz-transform          : scale(1.2,1.2); 
+    -o-transform            : scale(1.2,1.2); 
+    transform               : scale(1.2,1.2);  
+}
+
+.icon-circle  i:before{
+    margin-left         : 0px;
+    font-size           : 20px;
+}   
+}
+
+.ifacebook .fa{
+    color               :#3B5998;
+    border              :2px solid #3B5998;
+}
+
+.ifacebook .fa:hover{
+    
+    background-color        : #3B5998;    
+    color                   : #fff;
+    border                  : 1px solid #3B5998;
+
+}
+
+.itwittter .fa{
+    color               : #33ccff;
+    border              :2px solid #33ccff;
+}
+
+.itwittter .fa:hover{
+    
+    background-color        : #33ccff;    
+    color                   : #fff;
+    border                  : 1px solid #33ccff;
+
+}
+
+.igoogle .fa{
+    color               : #BD3518;
+    border              :2px solid #BD3518;
+}
+
+.igoogle .fa:hover{
+    
+    background-color        : #BD3518;    
+    color                   : #fff;
+    border                  : 1px solid #BD3518;
+
+}
+
+/* parallax image */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-size: cover;
+}
