@@ -41,16 +41,14 @@
 
      <?php
         session_start();
-        if (!isset($_SESSION['myarea'])) {
-            echo "MALE";
-        exit;
-    }
-    ?>
-  
 
-    <?php
+        if (!isset($_SESSION['logged'])) {
+            echo "MALE";
+            exit;
+        }
+
         include_once('navbar.php');
-    ?>
+     ?>
 
     <BR><BR><BR>
     <section id="about" class="container content-section text-center">
@@ -67,7 +65,7 @@
     <!--Map Section-->
     <input class = "locate"  type="button" value="Locate me!" onClick="javascript:getLocationLeaflet();">
     <input class = "segnala"  type="button" value="Segnala!" onClick="javascript:addMark();">
-    <div id="map" style="width: 100%x; height: 380px;"></div>
+    <div id="map" style="width: 100%; height: 380px;"></div>
     <BR>
     <!-- Footer -->
     <footer>

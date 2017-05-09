@@ -10,14 +10,6 @@
 
 <body>
 
-<?php
-session_start();
-if (isset($_SESSION['remember_me'])) {
-    setcookie('login', password_hash($_SESSION['myarea'], PASSWORD_DEFAULT), time() + 1500);
-    //Imposta il cookie con l'hash della email dell'utente
-}
-?>
-
 <h1>Stai per essere reindirizzato alla Home Page</h1>
 
 <div class="loader-wrapper" id="loader-1" style="display: inherit;">

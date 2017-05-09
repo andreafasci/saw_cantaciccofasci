@@ -1,3 +1,7 @@
+<?php
+require_once ("php/login.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,10 +40,8 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onLoad="javascript:init();">
 
 
-    <?php
-    require_once("php/login.php");
-    ?>
-  
+
+
     <!--modal-->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -118,6 +120,7 @@
                 <div class="col-lg-12">
                     <h3><strong>Log in to your personal area to report</strong></h3><BR>
                     <div id="map" style="width: 50vw; height: 40vh;left:20%"></div><BR>
+
                     <a href="redirect.php" class="btn btn-default btn-lg">Go to personal area</a>
                 </div>
             </div>
@@ -196,13 +199,13 @@
 
     <!--modal script-->
     <script>
+
         $(document).ready(function(){
         var ul = document.getElementById('ul1');
         ul.onclick = function(event) {
             $("#myModal").modal();//modal login
             };
         });
-
 
         var map;
         

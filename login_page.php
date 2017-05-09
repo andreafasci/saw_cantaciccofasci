@@ -1,3 +1,5 @@
+<!--
+
 <!DOCTYPE html>
 
 <html>
@@ -10,14 +12,14 @@
 
 <?php
 
-require_once("php/login.php");
+//require_once("php/login.php");
 
 ?>
 
 <form action="" method="post">
 
     <h1>Login</h1>
-    <p> <?php echo $errormessage . "<br>" ?> </p>
+    <p> <?php //echo $errormessage . "<br>" ?> </p>
     <fieldset>
         <legend><span class="number">1</span>Information</legend>
 
@@ -42,3 +44,6 @@ require_once("php/login.php");
 </body>
 
 </html>
+
+
+-->

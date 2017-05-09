@@ -1,13 +1,15 @@
 <?php
 
-require_once ("check_sessions.php");
+session_start();
+
 require_once ("database.php");
 
 $errormessage = "";
 
-if (session_opened()) {
-    header('Location: redirect.php');
-    exit;
+// Save useful data in $_SESSION
+function createSession($userEmail){
+    $_SESSION["logged"]=TRUE;
+    $_SESSION["email"]=$userEmail;
 }
 
 //Se esiste un cookie controllo hash -> redirect
@@ -17,16 +19,12 @@ if (isset($_COOKIE['login'])) {
     $result = mysqli_query($connection, $query);
     while ($row = mysqli_fetch_array($result)) {
         if (password_verify($row['email'], $_COOKIE['login'])) {
-            mysqli_close($connection);
-            $_SESSION['myarea'] = $row['email'];
-            header('Location: redirect.php');
-            exit;
+            createSession($row['email']);
+            break;
         }
     }
     mysqli_close($connection);
 }
-
-
 
 if (isset($_POST['login_button'])) {
 
@@ -34,8 +32,7 @@ if (isset($_POST['login_button'])) {
         && !empty($_POST['email']) && !empty($_POST['password'])
     ) {
 
-        /*CONNESSIONE A DATABASE
-        $connection = mysqli_connect("localhost", "root", "andrea", "hyt");*/
+        //CONNESSIONE A DATABASE
         $connection = db_connection();
 
         if (mysqli_connect_errno($connection)) {
@@ -43,6 +40,7 @@ if (isset($_POST['login_button'])) {
             mysqli_close($connection);
             exit;
         }
+
 
         $email = trim($_POST['email']);
         $pwd = trim($_POST['password']);
@@ -60,11 +58,11 @@ if (isset($_POST['login_button'])) {
 
             // DO THINGS WITH RESULT
             if (password_verify($pwd, $res_password)) {
-                $_SESSION['myarea'] = $email;
-                $_SESSION['logged'] = true;
+                createSession($email);
+
                 //Se è stato selezionato il checkbox..
                 if (isset($_POST['checkbox'])) {
-                    $_SESSION['remember_me'] = true;
+                    setcookie('login', password_hash($_SESSION['email'], PASSWORD_DEFAULT), time() + (7 * 24 * 60 * 60), "/");
                 }
                 header('Location: redirect.php');
 
