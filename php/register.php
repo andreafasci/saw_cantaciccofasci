@@ -42,7 +42,7 @@ if (isset($_POST['register_button'])) {
                     $errormessage .= 'Utente gi&agrave; registrato!';
                 else {
                     $pwd = password_hash($pwd, PASSWORD_DEFAULT);
-                    if ($statement2 = mysqli_prepare ($connection, "INSERT INTO users VALUES (?, ?, ?)" )){
+                    if ($statement2 = mysqli_prepare ($connection, "INSERT INTO users VALUES (?, ?, ?, false)" )){
                         mysqli_stmt_bind_param($statement2, "sss", $name, $email, $pwd);
                         mysqli_stmt_execute($statement2);
                         mysqli_stmt_close($statement2);

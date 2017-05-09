@@ -41,7 +41,6 @@ if (isset($_POST['login_button'])) {
             exit;
         }
 
-
         $email = trim($_POST['email']);
         $pwd = trim($_POST['password']);
 
@@ -52,7 +51,7 @@ if (isset($_POST['login_button'])) {
             // execute query
             mysqli_stmt_execute($statement);
             // bind result vars
-            mysqli_stmt_bind_result($statement, $res_name, $res_email, $res_password);
+            mysqli_stmt_bind_result($statement, $res_name, $res_email, $res_password, $adminOrNot);
             // fetch result
             mysqli_stmt_fetch($statement);
 
