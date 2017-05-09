@@ -198,8 +198,7 @@ require_once ("php/login.php");
 
 
     <!--modal script-->
-    <script>
-
+    <script>  
         $(document).ready(function(){
         var ul = document.getElementById('ul1');
         ul.onclick = function(event) {

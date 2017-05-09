@@ -32,6 +32,24 @@
                 <li>
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
+                <?php
+                    if (isset($_SESSION['logged'])) {
+                        if ($_SESSION['logged']) {
+                            echo '
+                                <li>
+                                    <a class="page-scroll" href="my_area.php">My Area</a>
+                                </li>';
+                            }
+                        if (isset($_SESSION['admin'])){
+                            if($_SESSION['admin']){
+                                echo'
+                                <li>
+                                    <a class="page-scroll" href="#">Admin Area</a>
+                                </li>';
+                            }
+                        }
+                    }
+                ?>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
