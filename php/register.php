@@ -32,7 +32,7 @@ if (isset($_POST['register_button'])) {
                 // execute query
                 mysqli_stmt_execute($statement1);
                 // bind result vars
-                mysqli_stmt_bind_result($statement1, $res_name, $res_email, $res_password);
+                mysqli_stmt_bind_result($statement1, $res_name, $res_email, $res_password, $res_admin);
                 // fetch result
                 mysqli_stmt_fetch($statement1);
                 // close statement
@@ -42,7 +42,7 @@ if (isset($_POST['register_button'])) {
                     $errormessage .= 'Utente gi&agrave; registrato!';
                 else {
                     $pwd = password_hash($pwd, PASSWORD_DEFAULT);
-                    if ($statement2 = mysqli_prepare ($connection, "INSERT INTO users VALUES (?, ?, ?, false)" )){
+                    if ($statement2 = mysqli_prepare ($connection, "INSERT INTO users VALUES (?, ?, ?, FALSE)" )){
                         mysqli_stmt_bind_param($statement2, "sss", $name, $email, $pwd);
                         mysqli_stmt_execute($statement2);
                         mysqli_stmt_close($statement2);

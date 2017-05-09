@@ -7,9 +7,11 @@ require_once ("database.php");
 $errormessage = "";
 
 // Save useful data in $_SESSION
-function createSession($userEmail){
+function createSession($userEmail,$userName){
     $_SESSION["logged"]=TRUE;
     $_SESSION["email"]=$userEmail;
+    $_SESSION["name"]=$userName;
+
 }
 
 //Se esiste un cookie controllo hash -> redirect
@@ -57,7 +59,9 @@ if (isset($_POST['login_button'])) {
 
             // DO THINGS WITH RESULT
             if (password_verify($pwd, $res_password)) {
-                createSession($email);
+                createSession($email,$res_name);
+                if($adminOrNot)
+                    $_SESSION['admin'] = TRUE;
 
                 //Se è stato selezionato il checkbox..
                 if (isset($_POST['checkbox'])) {

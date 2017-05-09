@@ -13,7 +13,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top"><img src="cone.svg" height="28" width="37"></a>
+            <a class="navbar-brand page-scroll" href="index.php#page-top"><img src="cone.svg" height="28" width="37"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -24,13 +24,13 @@
                     <a class="page-scroll" href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#about">About</a>
+                    <a class="page-scroll" href="index.php#about">About</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#services">Map</a>
+                    <a class="page-scroll" href="index.php#services">Map</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
+                    <a class="page-scroll" href="index.php#contact">Contact</a>
                 </li>
                 <?php
                     if (isset($_SESSION['logged'])) {
@@ -39,15 +39,16 @@
                                 <li>
                                     <a class="page-scroll" href="my_area.php">My Area</a>
                                 </li>';
-                            }
-                        if (isset($_SESSION['admin'])){
-                            if($_SESSION['admin']){
-                                echo'
-                                <li>
-                                    <a class="page-scroll" href="#">Admin Area</a>
-                                </li>';
+                            if (isset($_SESSION['admin'])){
+                                if($_SESSION['admin']){
+                                    echo'
+                                        <li>
+                                            <a class="page-scroll" href="#">Admin Area</a>
+                                        </li>';
+                                }
                             }
                         }
+                        
                     }
                 ?>
             </ul>
@@ -63,7 +64,7 @@
                         echo '
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
-                                    <a>Logged as</a>
+                                    <a>Logged as '.$_SESSION['name'].'</a>
                                 </li>
                                 <li>
                                     <a href="php/logout.php">Logout</a>
