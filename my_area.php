@@ -41,14 +41,54 @@
 
      <?php
         session_start();
-
-        if (!isset($_SESSION['logged'])) {
+        if (!isset($_SESSION['myarea'])) {
             echo "MALE";
-            exit;
-        }
+        exit;
+    }
+    ?>
+  
 
-        include_once('navbar.php');
-     ?>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="cone.svg" height="28" width="37"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <!--<li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>-->
+                    <li>
+                        <a>Restricted Area</a>
+                    </li>
+                    
+                </ul>
+                
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a>Logged as</a>
+                    </li>
+                    <li>
+                        <a href="php/logout.php">Logout</a>
+                    </li>
+                    
+                </ul>
+
+            </div>
+
+
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
     <BR><BR><BR>
     <section id="about" class="container content-section text-center">
@@ -65,7 +105,7 @@
     <!--Map Section-->
     <input class = "locate"  type="button" value="Locate me!" onClick="javascript:getLocationLeaflet();">
     <input class = "segnala"  type="button" value="Segnala!" onClick="javascript:addMark();">
-    <div id="map" style="width: 100%; height: 380px;"></div>
+    <div id="map" style="width: 100%x; height: 380px;"></div>
     <BR>
     <!-- Footer -->
     <footer>
@@ -96,17 +136,18 @@
    <script>
         var map;
         var popup ;
+        var planes = new Array();
+        var marker;
         
         // initialize the map
         function init(){
-
 
             map = L.map('map').setView([44.457159, 8.993361], 7);
             popup = new L.Popup();
             var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
             }).addTo(map);
-           
+            
         }
         
         function onLocationFound(e) {
@@ -132,11 +173,20 @@
 
         function onMapClick(e) {
          //map click event object (e) has latlng property which is a location at which the click occured.
+         var name = e.latlng.toString();
+         planes.push(name);
 
-         popup
-           .setLatLng(e.latlng)
-           .setContent("You clicked the map at " + e.latlng.toString())
-           .openOn(map);
+         //popup
+           //.setLatLng(e.latlng)
+           //.setContent("You clicked the map at " + planes[0].toString())
+           //.openOn(map);
+
+        var lat=e.latlng.lat;
+        //alert(lat);
+        var lng=e.latlng.lng;
+        //alert(lng);
+        marker = L.marker([lat, lng]).addTo(map);
+
       }
 
   </script>
