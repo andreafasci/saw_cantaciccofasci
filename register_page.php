@@ -60,26 +60,37 @@
 
          <p> <?php echo $errormessage . "<br>" ?> </p>
             <fieldset>
-                <legend><span class="number">1</span>Information</legend>
-                <label for="name">Your full name:</label>
+                <legend style="color:white;"><span class="number">1</span>Information</legend>
+                <div>
+                <label for="name" style="color:white">Your full name:</label>
                 <input type="text" id="name" name="name">
-
-                <label for="mail">Email address:</label>
+                </div>
+                 <BR>
+                <div>
+                <label for="mail"style="color:white">Email address:</label>
                 <input type="email" id="mail" name="email">
+                </div>
 
             </fieldset>
+             <BR><BR>
 
             <fieldset>
-                <legend><span class="number">2</span>Passwords</legend>
-                <label for="password">Password:</label>
+                <legend style="color:white;"><span class="number">2</span>Passwords</legend>
+                <div>
+                <label for="password" style="color:white">Password:</label>
                 <input type="password" id="password" name="password">
-                <label for="password">Confirm Password:</label>
+                </div>
+                <BR>
+                <div>
+                <label for="password" style="color:white">Confirm Password:</label>
                 <input type="password" id="2nd_password" name="2nd_password" title="2nd_password">
+                </div>
             </fieldset>
-
+        <BR><BR>
         <div>
             <button type="submit" name="register_button">Register</button>
         </div>
+
 
     </form>
     </section>
