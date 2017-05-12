@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4deb1
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Creato il: Mag 09, 2017 alle 16:14
--- Versione del server: 5.7.15-1
--- Versione PHP: 7.0.12-2
+-- Host: 127.0.0.1
+-- Creato il: Mag 12, 2017 alle 15:25
+-- Versione del server: 5.7.14
+-- Versione PHP: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,6 +23,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struttura della tabella `reports`
+--
+
+CREATE TABLE `reports` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `lat` double NOT NULL,
+  `lng` double NOT NULL,
+  `description` text,
+  `photo` varchar(255) DEFAULT NULL,
+  `data` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `reports`
+--
+
+INSERT INTO `reports` (`id`, `email`, `lat`, `lng`, `description`, `photo`, `data`) VALUES
+(1, 'a@a.a', 40, 40, NULL, NULL, '2017-05-17 05:00:00'),
+(2, 'b@b.b', 50, 50, NULL, NULL, '2017-05-03 00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Struttura della tabella `users`
 --
 
@@ -32,3 +56,32 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `admin` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `users`
+--
+
+INSERT INTO `users` (`name`, `email`, `password`, `admin`) VALUES
+('a', 'a@a.a', 'a', 0),
+('b', 'b@b.b', 'b', 0),
+('c', 'c@b.c', 'c', 0);
+
+--
+-- Indici per le tabelle scaricate
+--
+
+--
+-- Indici per le tabelle `reports`
+--
+ALTER TABLE `reports`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indici per le tabelle `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`email`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
