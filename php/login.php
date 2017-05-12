@@ -7,7 +7,7 @@ require_once ("database.php");
 $errormessage = "";
 
 // Save useful data in $_SESSION
-function createSession($userEmail,$userName){
+function createSession($userEmail,$userName){//Add username to SESSION vars
     $_SESSION["logged"]=TRUE;
     $_SESSION["email"]=$userEmail;
     $_SESSION["name"]=$userName;
