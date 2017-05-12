@@ -59,7 +59,7 @@
                 </li>
 
                 <?php
-                if (isset($_SESSION['logged'])) {
+                if (isset($_SESSION['logged'])) {//Print username
                     if ($_SESSION['logged']) {
                         echo '
                             <ul class="nav navbar-nav navbar-right">
