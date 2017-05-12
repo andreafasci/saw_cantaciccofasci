@@ -1,7 +1,7 @@
 <?php
 	require_once("../database.php");
 	session_start();
-	if(isset($_POST['old_name']) && isset($_POST['new_name']) && isset($_SESSION['email']) && isset($_SESSION['name'])){
+	if(isset($_POST['new_name']) && isset($_SESSION['email']) && isset($_SESSION['name'])){
 		$con = db_connection();
 		trim($_POST['new_name']);
 		trim($_POST['old_name']);

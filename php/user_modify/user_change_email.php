@@ -1,7 +1,7 @@
 <?php
 	require_once("../database.php");
 	session_start();
-	if(isset($_POST['old_mail']) && isset($_POST['new_mail']) && isset($_SESSION['email'])){
+	if(isset($_POST['new_mail']) && isset($_SESSION['email'])){
 		$con = db_connection();
 		trim($_POST['new_mail']);
 		trim($_POST['old_mail']);

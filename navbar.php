@@ -38,6 +38,9 @@
                             echo '
                                 <li>
                                     <a class="page-scroll" href="my_area.php">My Area</a>
+                                </li>
+                                <li>
+                                    <a class="page-scroll" href="my_profile.php">My Profile</a>
                                 </li>';
                             if (isset($_SESSION['admin'])){
                                 if($_SESSION['admin']){
