@@ -59,6 +59,15 @@ footer{
 }
 
 
+/*modal*/
+.modal-dialog{
+    width: 30%;
+    height: 90%;
+}
+.modal-content{
+    background-color: #7D98A1;
+}
+
 
 
 
