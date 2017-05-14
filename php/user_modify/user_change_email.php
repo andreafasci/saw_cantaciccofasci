@@ -10,6 +10,7 @@
 		$query = "UPDATE users SET email = '$new_mail' WHERE email = '$old_mail'";
 		$result = mysqli_query($con, $query);
 		$_SESSION['email'] = $new_mail;
+		mysqli_close($con);
 		header('Location: ../../my_area.php' );
 	}
 	else{

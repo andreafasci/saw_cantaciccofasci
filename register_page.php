@@ -37,20 +37,10 @@
 
 <body>
 
-<?php include 'php/register.php'; ?>
+<?php include 'php/register.php'; 
+    require_once("navbar.php")?>
 
-    <!-- Navigation bar -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header page-scroll">
-                
-                <a class="navbar-brand page-scroll" href="#page-top"><img src="cone.svg" height="28" width="37"></a>
-            </div>
-
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    
     
 
     <section id="reg" class="intro-section">

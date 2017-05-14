@@ -46,7 +46,7 @@
                                 if($_SESSION['admin']){
                                     echo'
                                         <li>
-                                            <a class="page-scroll" href="#">Admin Area</a>
+                                            <a class="page-scroll" href="admin_area.php">Admin Area</a>
                                         </li>';
                                 }
                             }

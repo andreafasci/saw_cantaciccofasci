@@ -13,6 +13,7 @@
 		$email = $_SESSION['email'];
 		$query = "UPDATE users SET password = 'pwd' WHERE email = '$email'";
 		$result = mysqli_query($con, $query);
+		mysqli_close($con);
 		header('Location: ../../my_area.php' );
 	}
 	else{

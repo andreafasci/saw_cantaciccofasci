@@ -11,6 +11,7 @@
 		$query = "UPDATE users SET name = '$new_name' WHERE name = '$old_name' AND email = '$email'";
 		$result = mysqli_query($con, $query);
 		$_SESSION['name'] = $new_name;
+		mysqli_close($con);
 		header('Location: ../../my_area.php' );
 	}
 	else{
