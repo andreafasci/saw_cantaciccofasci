@@ -27,7 +27,7 @@
                     <a class="page-scroll" href="index.php#about">About</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="index.php#services">Map</a>
+                    <a class="page-scroll" href="map_page.php">Map</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="index.php#contact">Contact</a>
