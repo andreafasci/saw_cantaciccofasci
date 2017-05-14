@@ -52,8 +52,8 @@ if (!isset($_SESSION['logged'])) {
 <section id="about" class="container content-section text-center">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-            <h6>Benvenuto nella tua area personale</h6>
-            <p6> Qui potrai segnalare problemi sulle strade direttamente sulla mappa<BR>
+            <h6>Benvenuto nella Map page </h6>
+            <p6> Qui potrai vedere le altre segnalzioni direttamente sulla mappa<BR>
                 <!--Utilizza il bottone locate me per localizzarti sulla mappa--><BR>
             </p6>
         </div>
