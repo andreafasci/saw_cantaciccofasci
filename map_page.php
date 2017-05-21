@@ -35,15 +35,6 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onLoad="javascript:init();">
 
-
-<?php
-session_start();
-if (!isset($_SESSION['logged'])) {
-    echo "MALE";
-    exit;
-}
-?>
-
 <?php include_once("navbar.php") ?>
 
 <?php require("php/map.php") ?>
