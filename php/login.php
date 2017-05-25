@@ -7,10 +7,11 @@ require_once ("database.php");
 $errormessage = "";
 
 // Save useful data in $_SESSION
-function createSession($userEmail, $userName){
+function createSession($userEmail,$userName){//Add username to SESSION vars
     $_SESSION["logged"]=TRUE;
     $_SESSION["email"]=$userEmail;
     $_SESSION["name"]=$userName;
+
 }
 
 //Se esiste un cookie controllo hash -> redirect
@@ -20,7 +21,7 @@ if (isset($_COOKIE['login'])) {
     $result = mysqli_query($connection, $query);
     while ($row = mysqli_fetch_array($result)) {
         if (password_verify($row['email'], $_COOKIE['login'])) {
-            createSession($row['email'], $row['name']);
+            createSession($row['email']);
             break;
         }
     }
@@ -58,7 +59,9 @@ if (isset($_POST['login_button'])) {
 
             // DO THINGS WITH RESULT
             if (password_verify($pwd, $res_password)) {
-                createSession($email, $res_name);
+                createSession($email,$res_name);
+                if($adminOrNot)
+                    $_SESSION['admin'] = TRUE;
 
                 //Se è stato selezionato il checkbox..
                 if (isset($_POST['checkbox'])) {

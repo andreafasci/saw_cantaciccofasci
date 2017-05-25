@@ -13,7 +13,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="index.php#    page-top"><img src="cone.svg" height="28" width="37"></a>
+            <a class="navbar-brand page-scroll" href="index.php#page-top"><img src="cone.svg" height="28" width="37"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

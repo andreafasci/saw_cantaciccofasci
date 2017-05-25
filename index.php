@@ -41,7 +41,6 @@ require_once ("php/login.php");
 
 
 
-
     <!--modal-->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -51,7 +50,7 @@ require_once ("php/login.php");
                     <h3>Login to HYT</h3>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="index.php" name="login_form">
+                    <form method="post" action="" name="login_form">
                         <p> <?php echo $errormessage . "<br>" ?> </p>
                         <label for="mail">Email address:</label>
                         <input type="email" id="mail" name="email"><BR><BR>
@@ -64,7 +63,7 @@ require_once ("php/login.php");
                     </form>
                 </div>
                 <div class="modal-footer">
-                    New To HYT?
+                    New To MyWebsite.com?
                     <a href="register_page.php" class="btn btn-primary">Register</a>
                 </div>
             </div>

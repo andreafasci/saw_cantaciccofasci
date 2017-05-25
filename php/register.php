@@ -14,7 +14,6 @@ if (isset($_POST['register_button'])) {
 
         if ($_POST['password'] != $_POST['2nd_password'])
             $errormessage = "Le due password non corrispondono! ";
-
         else {
 
             // Accedo al DB
@@ -46,14 +45,12 @@ if (isset($_POST['register_button'])) {
                     if ($statement2 = mysqli_prepare ($connection, "INSERT INTO users VALUES (?, ?, ?, FALSE)" )){
                         mysqli_stmt_bind_param($statement2, "sss", $name, $email, $pwd);
                         mysqli_stmt_execute($statement2);
-                        if (mysqli_stmt_affected_rows($statement2) === 1) {
+                        mysqli_stmt_close($statement2);
+
+                        if (mysqli_stmt_affected_rows($statement2) === 1)
                             $errormessage .= mysqli_error($connection);
-                            mysqli_stmt_close($statement2);
-                        }
-                        else {
+                        else
                             $errormessage .= "Registrazione effettuata correttamente!";
-                            mysqli_stmt_close($statement2);
-                        }
                     }
                 }
 
