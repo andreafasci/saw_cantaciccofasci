@@ -1,3 +1,0 @@
-    $magicianObj = new imageLib('racecar.jpg');
-    $magicianObj -> resizeImage(100, 200);
-    $magicianObj -> saveImage('racecar_convertd.png', 100);

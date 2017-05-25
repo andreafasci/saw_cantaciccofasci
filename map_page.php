@@ -35,6 +35,15 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" onLoad="javascript:init();">
 
+
+<?php
+session_start();
+if (!isset($_SESSION['logged'])) {
+    echo "MALE";
+    exit;
+}
+?>
+
 <?php include_once("navbar.php") ?>
 
 <?php require("php/map.php") ?>
@@ -90,15 +99,17 @@
 
     // initialize the map
     function init() {
-        
-        /*var aux = <?php echo(json_encode($_SESSION["planes"][0][0])); ?>;
+
+        /*
+        var aux = <?php echo(json_encode($_SESSION["planes"][0][0])); ?>;
         alert(aux);
         var aux = <?php echo(json_encode($_SESSION["planes"][0][1])); ?>;
         alert(aux);
          var aux = <?php echo(json_encode($_SESSION["planes"][1][0])); ?>;
         alert(aux);
          var aux = <?php echo(json_encode($_SESSION["planes"][1][1])); ?>;
-        alert(aux);*/
+        alert(aux);
+        */
 
         map = L.map('map').setView([44.457159, 8.993361], 3);
         var Esri_WorldImagery = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
