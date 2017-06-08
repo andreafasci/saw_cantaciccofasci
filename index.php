@@ -56,7 +56,7 @@ require_once ("php/login.php");
                         <input type="email" id="mail" name="email"><BR><BR>
                         <label for="password">Password:       </label>
                         <input type="password" id="password" name="password"><BR><BR><BR><BR>
-                        <input type = "checkbox" id = "checkbox" name = "checkbox" value = "1">Auto Login
+                        <input type = "checkbox" id = "checkbox" name = "rememberMe" value = "1">Auto Login
                         <p><button type="submit" class="btn btn-primary" name="login_button" id="signin">Sign in</button>
                             <a href="#">Forgot Password?</a>
                         </p>

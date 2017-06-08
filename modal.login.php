@@ -1,3 +1,4 @@
+<!--
 <div class="modal fade" id="loginModal" role="dialog">
 
     <div class="container modal-content">
@@ -30,5 +31,43 @@
             <span><a href="#"> Forgot password?</a></span><br><br>
             <span data-dismiss="modal">Not yet registered? <a id="registerLink" href="#"> Register! </a></span>
         </div>
+
+    </div>
+</div>
+-->
+
+<div class="modal fade" id="loginModal" role="dialog">
+
+    <div class="container modal-content">
+
+        <div class=" container modal-header bg-primary">
+            <button type="button" class="close " data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"> Welcome! </h4>
+        </div>
+
+        <div class="form-group container modal-body">
+
+            <form method="post" action="php/login.php">
+
+                <div class="modalInput">
+                    <input type="email" class="container form-control" id="email" name="email" placeholder="Email"><br>
+                    <input type="password" class="container form-control" id="password" name="password" placeholder="Password">
+                </div>
+
+                <button class="btn btn-default submit-button" name="login_button" id="login_button">Login</button> <br>
+                <div class="rememberMe">
+                    <input type="checkbox" name="rememberMe" id="rememberMe">
+                    <h>Remember me</h><br>
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="form-group container modal-body">
+            <span><a href="#"> Forgot password?</a></span><br><br>
+            <span data-dismiss="modal">Not yet registered? <a id="registerLink" href="#"> Register! </a></span>
+        </div>
+
     </div>
 </div>

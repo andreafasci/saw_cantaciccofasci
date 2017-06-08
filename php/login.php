@@ -1,5 +1,6 @@
 <?php
 
+
 session_start();
 
 require_once ("database.php");
@@ -11,7 +12,6 @@ function createSession($userEmail,$userName){//Add username to SESSION vars
     $_SESSION["logged"]=TRUE;
     $_SESSION["email"]=$userEmail;
     $_SESSION["name"]=$userName;
-
 }
 
 //Se esiste un cookie controllo hash -> redirect
@@ -21,7 +21,7 @@ if (isset($_COOKIE['login'])) {
     $result = mysqli_query($connection, $query);
     while ($row = mysqli_fetch_array($result)) {
         if (password_verify($row['email'], $_COOKIE['login'])) {
-            createSession($row['email']);
+            createSession($row['email'], $row['name'] );
             break;
         }
     }
@@ -63,11 +63,11 @@ if (isset($_POST['login_button'])) {
                 if($adminOrNot)
                     $_SESSION['admin'] = TRUE;
 
-                //Se è stato selezionato il checkbox..
-                if (isset($_POST['checkbox'])) {
+                //Se è stato selezionato il checkbox rememberMe
+                if (isset($_POST['rememberMe'])) {
                     setcookie('login', password_hash($_SESSION['email'], PASSWORD_DEFAULT), time() + (7 * 24 * 60 * 60), "/");
                 }
-                header('Location: redirect.php');
+                header('Location: ../redirect.php');
 
             }
             else {

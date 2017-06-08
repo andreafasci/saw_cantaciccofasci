@@ -63,7 +63,6 @@ function activeChats($email)
 
 /**
  * @param $from
- * @param $to
  * @param $text
  * @return bool
  */
@@ -199,9 +198,9 @@ if (isset($_POST['idChat']) && !empty($_POST['idChat'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css" >
-    <link rel="stylesheet" href="css/scrolling-nav.css" >
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/scrolling-nav.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -219,16 +218,18 @@ if (isset($_POST['idChat']) && !empty($_POST['idChat'])) {
 include("navbarByAF.php");
 ?>
 
-<div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select a conversation ...
-        <span class="caret"></span>
-    </button>
+<div class="text-center">
+    <div class="dropdown btn-group text-center">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select a conversation ...
+            <span class="caret"></span>
+        </button>
 
-    <ul class="dropdown-menu">
-        <?php
-        echo activeChats($_SESSION['email']);
-        ?>
-    </ul>
+        <ul class="dropdown-menu">
+            <?php
+            echo activeChats($_SESSION['email']);
+            ?>
+        </ul>
+    </div>
 </div>
 
 <div id="chatBox" class="pre-scrollable">
